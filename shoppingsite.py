@@ -79,6 +79,21 @@ def show_shopping_cart():
     # Make sure your function can also handle the case wherein no cart has
     # been added to the session
 
+#Below code is @wip, hence commented
+    # melons_ids = session.get("cart").keys()
+
+    # for each_id in melons_ids:
+    #     melon_list = get_by_id(each_id)
+    #     print melon_list
+
+    # amount_in_cart = session.get("cart").values()
+    # print "the melons in cart are {}".format(melons_in_cart)
+    # print "the melons in cart are {}".format(amount_in_cart)
+
+    # total_cost = 0
+
+    # for melon_id in melons_in_cart:
+
     return render_template("cart.html")
 
 
@@ -112,6 +127,8 @@ def add_to_cart(melon_id):
         session["cart"][melon_id] += 1
 
     # print "Successfully added"
+    print session.get("cart")
+    print session.get("cart").keys()
 
     flash("You've successfully added a melon to your cart!")
 
